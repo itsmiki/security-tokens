@@ -1,6 +1,7 @@
 import os
 import time
 import hashlib
+import pickle
 
 class Session():
     def __init__(self, name: str) -> None:
@@ -13,7 +14,7 @@ class Session():
             "session_id": self.session_id,
             "name": self.name,
             "logs_path": self.logs_path,
-            # "info_path": self.info_path,
+            "info_path": self.info_path,
             "tokens": []
         }
  
@@ -36,26 +37,25 @@ class Session():
         if not os.path.exists("sessions"):
             os.mkdir('sessions')
 
-        with open("sessions/" + str(self.session_id) + '.txt', 'w') as file:
+        with open("sessions/" + str(self.session_id) + '.pkl', 'w') as file:
             pass
         
         return os.path.abspath(os.getcwd()) + '/session_logs'
 
-    def update_session_info(self):
-        if not len(self.session_logs["tokens"]) == len(self.generated_tokens):
-            for token in self.generated_tokens:
-                if token.token_id not in [d["token_id"] for d in self.session_logs["tokens"]]:
-                    self.session_logs["tokens"].append({
-                        "token_id": token.token_id,
-                        "name": token.name,
-                        "description": token.description,
-                        "message": token.message,
-                        "logs_path": token.logs_path,
+    def save_session_info(self):
+        with open("sessions/" + str(self.session_id) + '.pkl', 'wb') as file:
+            pickle.dump(self, file, pickle.HIGHEST_PROTOCOL)
 
-                    })
 
-        with open("sessions/" + str(self.session_id) + '.txt', 'w', encoding='utf-8') as file:
-            file.write(str(self.session_logs))
+    def get_token_names(self) -> list:
+        token_names_list = []
+        for token in self.generated_tokens:
+            token_names_list.append(token.name)
+        
+        return token_names_list
+
+        
+
 
 if __name__ == "__main__":
     test_session = Session("sesja_1")
