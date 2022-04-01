@@ -4,6 +4,8 @@ from enum import Enum
 class tokenTypes(Enum):
     URL = 1
     QR_CODE = 2
+    WORD = 3
+    EXCEL = 4
 
 
 if __name__ == "__main__":
