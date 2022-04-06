@@ -15,9 +15,9 @@ class QR_Code(Token):
             os.mkdir(os.path.dirname(os.path.abspath(__file__)) + '/qr_codes')
 
         if port == None:
-            text_url = 'http://' + ip + '/token/qrcode?id=' + self.token_id
+            text_url = 'http://' + ip + '/token?type=qr_code&id=' + self.token_id
         else:
-            text_url = 'http://' + ip + ':' + port + '/token/qrcode?id=' + self.token_id
+            text_url = 'http://' + ip + ':' + port + '/token?type=qr_code&id=' + self.token_id
         
         qrcode_img = qrcode.make(text_url)
         qrcode_img.save(os.path.dirname(os.path.abspath(__file__)) + '/qr_codes/qr_code_' + self.token_id + '.png')

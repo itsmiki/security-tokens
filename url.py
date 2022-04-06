@@ -10,9 +10,9 @@ class URL(Token):
 
     def create_token(ip, session_id, port = None) -> str:
         if port == None:
-            return 'http://' + ip + '/token/url?id=' + session_id
+            return 'http://' + ip + '/token?type=url&id=' + session_id
         else:
-            return 'http://' + ip + ':' + port + '/token/url?id=' + session_id
+            return 'http://' + ip + ':' + port + '/token?type=url&id=' + session_id
 
 
 if __name__ == "__main__":
