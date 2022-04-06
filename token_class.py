@@ -17,13 +17,13 @@ class Token():
         session.generated_tokens.append(self)
 
     def create_logs_file(self, session_id) -> bool:
-        if not os.path.exists("session_logs/" + session_id):
-            os.mkdir("session_logs/" + session_id)
+        if not os.path.exists(os.path.dirname(os.path.abspath(__file__)) + "/session_logs/" + session_id):
+            os.mkdir(os.path.dirname(os.path.abspath(__file__)) + "/session_logs/" + session_id)
 
-        with open('session_logs/' + session_id + "/" + str(self.token_id) + '.txt', 'w') as file:
+        with open(os.path.dirname(os.path.abspath(__file__)) + '/session_logs/' + session_id + "/" + str(self.token_id) + '.txt', 'w') as file:
             pass
         
-        return os.path.abspath(os.getcwd()) + '/session_logs/' + session_id + "/" + self.token_id + ".txt"
+        return os.path.dirname(os.path.abspath(__file__)) + '/session_logs/' + session_id + "/" + self.token_id + ".txt"
 
     def add_connection_log(self, ip, time_epoch, user_agent):
         log = {
@@ -34,7 +34,7 @@ class Token():
             "user-agent": user_agent,
         }
 
-        with open('session_logs/' + self.token_id[:16] + "/" + str(self.token_id) + '.txt', 'a') as file:
+        with open(os.path.dirname(os.path.abspath(__file__)) + '/session_logs/' + self.token_id[:16] + "/" + str(self.token_id) + '.txt', 'a') as file:
             file.write(str(log) + "\n")
         
 
