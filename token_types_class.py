@@ -6,6 +6,8 @@ class tokenTypes(Enum):
     QR_CODE = 2
     WORD = 3
     EXCEL = 4
+    ODT = 5
+    BAT = 6
 
 
 if __name__ == "__main__":
