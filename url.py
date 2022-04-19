@@ -8,11 +8,11 @@ class URL(Token):
         self.text_url = None
         self.img_path = None
 
-    def create_token(ip, session_id, port = None) -> str:
+    def create_token(self, ip, port = None) -> str:
         if port == None:
-            return 'http://' + ip + '/token?type=url&id=' + session_id
+            return 'http://' + ip + '/token?type=url&id=' + self.token_id
         else:
-            return 'http://' + ip + ':' + port + '/token?type=url&id=' + session_id
+            return 'http://' + ip + ':' + port + '/token?type=url&id=' + self.token_id
 
 
 if __name__ == "__main__":
