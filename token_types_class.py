@@ -8,6 +8,7 @@ class tokenTypes(Enum):
     EXCEL = 4
     ODT = 5
     BAT = 6
+    ODS = 7
 
 
 if __name__ == "__main__":
