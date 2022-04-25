@@ -7,7 +7,7 @@ from token_class import Token
 from session_class import Session
 from token_types_class import tokenTypes
 
-class ODS(Token)
+class ODS(Token):
     def __init__(self, session: Session, name: str, description: str = None, message: str = None):
         super().__init__(session, name, tokenTypes.ODS, description, message)
         self.ods_path = None
