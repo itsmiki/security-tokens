@@ -45,7 +45,7 @@ class ODS(Token):
 
         if __name__ == "__main__":
             sesja1 = Session("testsesja")
-            tokentest = ODT(sesja1, "test")
+            tokentest = ODS(sesja1, "test")
 
             tokentest.create_token("127.0.0.1", "5000")
 
