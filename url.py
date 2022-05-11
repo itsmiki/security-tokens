@@ -5,13 +5,14 @@ from token_types_class import tokenTypes
 class URL(Token):
     def __init__(self, session: Session, name: str, description: str = None, message: str = None):
         super().__init__(session, name, tokenTypes.URL, description, message)
-        self.text_url = None
-        self.img_path = None
+        self.path = None
 
     def create_token(self, ip, port = None) -> str:
         if port == None:
+            self.path = 'http://' + ip + '/token?type=url&id=' + self.token_id
             return 'http://' + ip + '/token?type=url&id=' + self.token_id
         else:
+            self.path = 'http://' + ip + ':' + port + '/token?type=url&id=' + self.token_id
             return 'http://' + ip + ':' + port + '/token?type=url&id=' + self.token_id
 
 

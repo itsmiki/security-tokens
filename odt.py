@@ -28,6 +28,7 @@ class ODT(Token):
         zipSourceFileURL = os.path.dirname(os.path.abspath(__file__)) + "/templates" + "/" + "template.odt"
         zipOutFileURL = os.path.dirname(os.path.abspath(__file__)) + '/odt/' + self.token_id + ".odt"
         xmlFileURL = tmpDirURL + "/" + "content.xml"
+        self.path = zipOutFileURL
         #
         # Unzip ODT
         #

@@ -21,7 +21,7 @@ class SH(Token):
 
 
         filename = (os.path.dirname(os.path.abspath(__file__)) + '/sh/' + self.token_id + '.sh')
-        self.path = (os.path.dirname(os.path.abspath(__file__)) + '/sh')
+        self.path = (os.path.dirname(os.path.abspath(__file__)) + '/sh/' + self.token_id + '.sh')
         file = open(filename, "w")
         file.write(s)
         file.close() 

@@ -9,6 +9,7 @@ class tokenTypes(Enum):
     ODT = 5
     BAT = 6
     SH = 7
+    ODS = 8
 
 
 if __name__ == "__main__":

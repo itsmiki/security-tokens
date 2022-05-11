@@ -21,7 +21,7 @@ class BAT(Token):
 
 
         filename = (os.path.dirname(os.path.abspath(__file__)) + '/bat/' + self.token_id + '.bat')
-        self.path = (os.path.dirname(os.path.abspath(__file__)) + '/bat')
+        self.path = (os.path.dirname(os.path.abspath(__file__)) + '/bat/' + self.token_id + '.bat')
         file = open(filename, "w")
         file.write(s)
         file.close() 

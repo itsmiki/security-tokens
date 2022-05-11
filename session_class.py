@@ -7,8 +7,10 @@ import pickle
 class Session():
     # Klasa sesja agreguje podległe po nią tokeny
     # w momencie stworzenia instancji sesja tworzone są foldery do logów i informacji na jej temat
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str, ip, port = None) -> None:
         self.name = name
+        self.ip = ip
+        self.port = port
         self.session_id = self.generate_session_id()
         self.logs_path = self.create_logs_file()
         self.info_path = self.create_session_info_file()
