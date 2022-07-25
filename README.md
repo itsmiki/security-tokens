@@ -4,6 +4,7 @@ Application generates tokens in a form of files with an appropriate extension to
 The implementation is based on sending HTTP requests via generated tokens to a controlled server. When a token is used by a user, relevant information about the user will be sent directly to the server. Each token is equipped with a unique value based on which it will be identified in our system.
 
 ## How to use
+Application can be run with Python3 (https://github.com/itsmiki/Security-Tokens/tree/main) or on Windows System directly (https://github.com/itsmiki/Security-Tokens/tree/exe).
 1. Create or Load Session `Session Management` tab. Session allows a number of tokens to be grouped together, this can be useful when running a large phishing campaign. In addition, a session can be loaded even when the application is closed, and allows the tokens and all the information associated with them to be saved.
 2. Create a token of your choice and describe it. The available formats are:
 	* URL link
