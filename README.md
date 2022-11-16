@@ -16,7 +16,7 @@ Application can be run with Python3 (https://github.com/itsmiki/Security-Tokens/
 	* Shell script
 	* Batch File
 	
-	Token is a file that when opened will execute a request at the target server. All tokens assigned to the session can be seen in `Token Management` tab.
+Token is a file that when opened will execute a request at the target server. All tokens assigned to the session can be seen in `Token Management` tab.
 
 3. In `Server Management` tab turn on the server on desired ip and port (it should match the session info or localhost to which requests are forwarded).
 4. Send tokens to selected users or place them in a suitable location in the system.
